@@ -24,10 +24,7 @@ struct NetworkConstant
     }
 }
 
-
-enum NetworkError : Error
-{
+enum NetworkError : Error {
     case success(String)
     case failure(Error)
-    
 }

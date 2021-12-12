@@ -6,3 +6,10 @@
 //
 
 import Foundation
+import CoreData
+
+class HomeEntity: NSManagedObject {
+    @NSManaged public var copyright : String?
+    @NSManaged public var date : String?
+    @NSManaged public var explanation : String?
+}

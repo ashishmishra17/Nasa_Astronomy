@@ -6,3 +6,27 @@
 //
 
 import Foundation
+
+class HomeDataManager {
+    
+    static let shared = HomeDataManager()
+    
+    private init() { }
+    
+    func getHomeData() -> HomeEntity? {
+        
+        // Fetch entities
+        let entity = CoreDataManager.shared.fetchData()
+        
+        return entity as? HomeEntity
+    }
+    
+    func saveHomeData() -> HomeEntity? {
+        
+        // Fetch entities
+        let entity = CoreDataManager.shared.fetchData()
+        
+        return entity as? HomeEntity
+    }
+    
+}

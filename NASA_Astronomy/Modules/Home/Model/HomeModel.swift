@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HomeModel : Decodable
+struct HomeModel: Decodable
 {
     let copyright : String?
     let date : String?

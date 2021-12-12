@@ -10,7 +10,7 @@ import Foundation
 class HomeViewModel
 {
     private var service:Servicable?
-    var successHandler: ((_ response: HomeEntity?, _ error: Error?) -> ())?
+    var successHandler: ((_ response: HomeModel?, _ error: Error?) -> ())?
     
     init(_ service:Servicable)
     {
@@ -19,12 +19,19 @@ class HomeViewModel
     
     func fetchNasaData()
     {
+        //Fetch from core data
+        if let data = HomeDataManager.shared.getHomeData() {
+            //self.successHandler?(data, nil)
+            return
+        }
+        
+        
         guard let service = service else {
             return
         }
  
         let homeRuter = HomeRouter([:])
-        service.fetchData(request: homeRuter, HomeEntity.self) { [weak self] result in
+        service.fetchData(request: homeRuter, HomeModel.self) { [weak self] result in
             
             switch result
             {
@@ -42,4 +49,18 @@ class HomeViewModel
         }
         
     }
+    
+    private func saveNasaDataInCache(_ homeData: HomeModel?) {
+        guard let homeData = homeData else {return}
+        let cache = NSCache<AnyObject, AnyObject>()
+        cache.setObject(homeData as AnyObject, forKey: "HomeScreenData" as AnyObject)
+    }
+    
+    private func fetchNasaDataFromCache() {
+        let cache = NSCache<AnyObject, AnyObject>()
+        if let homeData = cache.object(forKey: "HomeScreenData" as AnyObject) {
+            self.successHandler?(homeData as? HomeModel, nil)
+        }
+    }
+    
 }

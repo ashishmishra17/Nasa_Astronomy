@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+enum APIErrors: LocalizedError {
+    
+    case connectivityError
+    
+    var value: String {
+        switch self {
+            case .connectivityError: return "No Internet"
+        }
+    }
+}

@@ -12,7 +12,7 @@ class HomeViewController: UIViewController {
     @IBOutlet var tableView : UITableView?
     
     var viewModel:HomeViewModel?
-    var homeData: HomeEntity?
+    var homeData: HomeModel?
     let cellReuseIdentifier = "cell"
     
     override func viewDidLoad() {

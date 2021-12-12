@@ -17,10 +17,15 @@
 		13CB78C42764D9CA009E8ACD /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CB78C32764D9CA009E8ACD /* Services.swift */; };
 		13CB78C62764D9ED009E8ACD /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CB78C52764D9ED009E8ACD /* NetworkRouter.swift */; };
 		13CB78C92764E365009E8ACD /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CB78C82764E365009E8ACD /* Parser.swift */; };
-		13CB78CB2764E6EF009E8ACD /* HomeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CB78CA2764E6EF009E8ACD /* HomeEntity.swift */; };
+		13CB78CB2764E6EF009E8ACD /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CB78CA2764E6EF009E8ACD /* HomeModel.swift */; };
 		13CB78CD2764E85A009E8ACD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CB78CC2764E85A009E8ACD /* HomeViewModel.swift */; };
 		13CB78CF276508D1009E8ACD /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CB78CE276508D1009E8ACD /* FavoriteViewController.swift */; };
 		13CB78D127650B5B009E8ACD /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CB78D027650B5B009E8ACD /* FavoriteViewModel.swift */; };
+		13CB78DD2765FC81009E8ACD /* NetworkConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CB78DC2765FC81009E8ACD /* NetworkConnectivity.swift */; };
+		13CB78DF2765FD41009E8ACD /* ErrorEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CB78DE2765FD41009E8ACD /* ErrorEnums.swift */; };
+		13CB78E6276605B1009E8ACD /* HomeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CB78E5276605B1009E8ACD /* HomeEntity.swift */; };
+		13CB78E827660667009E8ACD /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CB78E727660667009E8ACD /* HomeDataManager.swift */; };
+		13CB78EA276606B7009E8ACD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CB78E9276606B7009E8ACD /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,10 +40,15 @@
 		13CB78C32764D9CA009E8ACD /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		13CB78C52764D9ED009E8ACD /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 		13CB78C82764E365009E8ACD /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
-		13CB78CA2764E6EF009E8ACD /* HomeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEntity.swift; sourceTree = "<group>"; };
+		13CB78CA2764E6EF009E8ACD /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		13CB78CC2764E85A009E8ACD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		13CB78CE276508D1009E8ACD /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		13CB78D027650B5B009E8ACD /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
+		13CB78DC2765FC81009E8ACD /* NetworkConnectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnectivity.swift; sourceTree = "<group>"; };
+		13CB78DE2765FD41009E8ACD /* ErrorEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEnums.swift; sourceTree = "<group>"; };
+		13CB78E5276605B1009E8ACD /* HomeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEntity.swift; sourceTree = "<group>"; };
+		13CB78E727660667009E8ACD /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
+		13CB78E9276606B7009E8ACD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		21528F605CCC3A3836CB586F /* Pods_NASA_Astronomy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NASA_Astronomy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF385E10059DA3A8A96E7A3 /* Pods-NASA_Astronomy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NASA_Astronomy.release.xcconfig"; path = "Target Support Files/Pods-NASA_Astronomy/Pods-NASA_Astronomy.release.xcconfig"; sourceTree = "<group>"; };
 		446BBC99AFD8DA8F32FFF9DB /* Pods-NASA_Astronomy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NASA_Astronomy.debug.xcconfig"; path = "Target Support Files/Pods-NASA_Astronomy/Pods-NASA_Astronomy.debug.xcconfig"; sourceTree = "<group>"; };
@@ -77,11 +87,9 @@
 		13C11B832764D84500CC8708 /* NASA_Astronomy */ = {
 			isa = PBXGroup;
 			children = (
-				13CB78C72764E351009E8ACD /* Parser */,
+				13CB78E12766045A009E8ACD /* Core Data */,
+				13CB78D22765FAD7009E8ACD /* Modules */,
 				13CB78C02764D967009E8ACD /* Network */,
-				13CB78BF2764D95A009E8ACD /* ViewModel */,
-				13CB78BE2764D955009E8ACD /* Model */,
-				13CB78BC2764D938009E8ACD /* ViewController */,
 				13C11B842764D84500CC8708 /* AppDelegate.swift */,
 				13C11B8A2764D84500CC8708 /* Main.storyboard */,
 				13C11B8D2764D84800CC8708 /* Assets.xcassets */,
@@ -91,48 +99,127 @@
 			path = NASA_Astronomy;
 			sourceTree = "<group>";
 		};
-		13CB78BC2764D938009E8ACD /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				13C11B882764D84500CC8708 /* HomeViewController.swift */,
-				13CB78CE276508D1009E8ACD /* FavoriteViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		13CB78BE2764D955009E8ACD /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				13CB78CA2764E6EF009E8ACD /* HomeEntity.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		13CB78BF2764D95A009E8ACD /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				13CB78CC2764E85A009E8ACD /* HomeViewModel.swift */,
-				13CB78D027650B5B009E8ACD /* FavoriteViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		13CB78C02764D967009E8ACD /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				13CB78C12764D994009E8ACD /* NetwrokConstant.swift */,
 				13CB78C32764D9CA009E8ACD /* Services.swift */,
 				13CB78C52764D9ED009E8ACD /* NetworkRouter.swift */,
+				13CB78C82764E365009E8ACD /* Parser.swift */,
+				13CB78DC2765FC81009E8ACD /* NetworkConnectivity.swift */,
+				13CB78DE2765FD41009E8ACD /* ErrorEnums.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
 		};
-		13CB78C72764E351009E8ACD /* Parser */ = {
+		13CB78D22765FAD7009E8ACD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				13CB78C82764E365009E8ACD /* Parser.swift */,
+				13CB78D42765FAE9009E8ACD /* Favorites */,
+				13CB78D32765FAE1009E8ACD /* Home */,
 			);
-			path = Parser;
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		13CB78D32765FAE1009E8ACD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				13CB78D72765FB0E009E8ACD /* View */,
+				13CB78D62765FB03009E8ACD /* View Model */,
+				13CB78D52765FAF6009E8ACD /* Model */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		13CB78D42765FAE9009E8ACD /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				13CB78DA2765FB60009E8ACD /* View */,
+				13CB78D92765FB57009E8ACD /* View Model */,
+				13CB78D82765FB4F009E8ACD /* Model */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		13CB78D52765FAF6009E8ACD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				13CB78CA2764E6EF009E8ACD /* HomeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		13CB78D62765FB03009E8ACD /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				13CB78CC2764E85A009E8ACD /* HomeViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		13CB78D72765FB0E009E8ACD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				13C11B882764D84500CC8708 /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		13CB78D82765FB4F009E8ACD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		13CB78D92765FB57009E8ACD /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				13CB78D027650B5B009E8ACD /* FavoriteViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		13CB78DA2765FB60009E8ACD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				13CB78CE276508D1009E8ACD /* FavoriteViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		13CB78E12766045A009E8ACD /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				13CB78E4276604AA009E8ACD /* Storage */,
+				13CB78E327660472009E8ACD /* Data Manager */,
+				13CB78E22766046A009E8ACD /* Entity */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		13CB78E22766046A009E8ACD /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				13CB78E5276605B1009E8ACD /* HomeEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		13CB78E327660472009E8ACD /* Data Manager */ = {
+			isa = PBXGroup;
+			children = (
+				13CB78E727660667009E8ACD /* HomeDataManager.swift */,
+			);
+			path = "Data Manager";
+			sourceTree = "<group>";
+		};
+		13CB78E4276604AA009E8ACD /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				13CB78E9276606B7009E8ACD /* CoreDataManager.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		3B4B73D901F14E249C52675D /* Pods */ = {
@@ -269,12 +356,17 @@
 			files = (
 				13CB78C22764D994009E8ACD /* NetwrokConstant.swift in Sources */,
 				13CB78C42764D9CA009E8ACD /* Services.swift in Sources */,
-				13CB78CB2764E6EF009E8ACD /* HomeEntity.swift in Sources */,
+				13CB78DD2765FC81009E8ACD /* NetworkConnectivity.swift in Sources */,
+				13CB78EA276606B7009E8ACD /* CoreDataManager.swift in Sources */,
+				13CB78CB2764E6EF009E8ACD /* HomeModel.swift in Sources */,
 				13CB78CD2764E85A009E8ACD /* HomeViewModel.swift in Sources */,
 				13CB78CF276508D1009E8ACD /* FavoriteViewController.swift in Sources */,
 				13CB78C92764E365009E8ACD /* Parser.swift in Sources */,
 				13CB78C62764D9ED009E8ACD /* NetworkRouter.swift in Sources */,
 				13C11B892764D84500CC8708 /* HomeViewController.swift in Sources */,
+				13CB78DF2765FD41009E8ACD /* ErrorEnums.swift in Sources */,
+				13CB78E827660667009E8ACD /* HomeDataManager.swift in Sources */,
+				13CB78E6276605B1009E8ACD /* HomeEntity.swift in Sources */,
 				13CB78D127650B5B009E8ACD /* FavoriteViewModel.swift in Sources */,
 				13C11B852764D84500CC8708 /* AppDelegate.swift in Sources */,
 			);
