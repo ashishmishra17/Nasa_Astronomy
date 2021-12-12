@@ -48,6 +48,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system" title="Search"/>
+                                <connections>
+                                    <action selector="search_actionWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qHd-a2-abr"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6aV-zQ-q8R">
                                 <rect key="frame" x="0.0" y="132" width="414" height="764"/>

@@ -11,20 +11,35 @@ import Alamofire
 class HomeViewController: UIViewController {
     
     @IBOutlet var tableView : UITableView?
-    
+    var viewPickerBG = UIView()
+    var datePicker = UIDatePicker()
+    var pickerToolbar: UIToolbar?
     var viewModel:HomeViewModel?
     var homeData: HomeModel?
     let cellReuseIdentifier = "cell"
+    var loader : Loader? = nil
+    var selectedDate = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setLoader()
         initViewModel()
         fetchData()
         setTableHandler()
+        setDatePickerUI()
     }
     
+        
     override func viewWillAppear(_ animated: Bool) {
         setNavigationBar()
+    }
+    
+    func setLoader(){
+        self.loader = Loader(title: "Processing...", center: self.view.center)
+        self.view.addSubview(self.loader!.getViewActivityIndicator())
+        
+        self.loader?.startAnimating()
     }
     
     func setTableHandler(){
@@ -47,6 +62,7 @@ class HomeViewController: UIViewController {
                     self.tableView?.delegate = self
                     self.tableView?.dataSource = self
                     self.tableView?.reloadData()
+                    self.loader?.stopAnimating()
                 }
             }
             
@@ -73,9 +89,76 @@ class HomeViewController: UIViewController {
     }
 
     @IBAction func search_action(sender : UIButton) {
-        
+        viewPickerBG.isHidden = false
     }
     
+    func setDatePickerUI() {
+    //    datePicker.isHidden = false
+
+        viewPickerBG.frame = CGRect(x: 10, y: self.view.frame.size.height - 250, width: self.view.frame.width, height: 200)
+        
+        let doneButton = UIButton(frame: CGRect(x: self.view.frame.size.width - 120, y: 0, width: 100, height: 40))
+        doneButton.setTitle("Done", for: .normal)
+        doneButton.backgroundColor = .white
+        doneButton.setTitleColor(UIColor.black, for: .normal)
+        doneButton.addTarget(self, action: #selector(self.donebuttonTapped), for: .touchUpInside)
+         viewPickerBG.addSubview(doneButton)
+        
+        let cancelButton = UIButton(frame: CGRect(x: 20, y: 0, width: 100, height: 40))
+        cancelButton.setTitle("Cancel", for: .normal)
+        cancelButton.backgroundColor = .white
+        cancelButton.setTitleColor(UIColor.black, for: .normal)
+        cancelButton.addTarget(self, action: #selector(self.datePickerCancel), for: .touchUpInside)
+         viewPickerBG.addSubview(cancelButton)
+
+        
+        datePicker.frame = CGRect(x: 0, y: 40, width: viewPickerBG.frame.size.width, height: viewPickerBG.frame.size.height-20)
+        // Set some of UIDatePicker properties
+        datePicker.timeZone = NSTimeZone.local
+        datePicker.backgroundColor = UIColor.white
+        datePicker.datePickerMode = .date
+        if #available(iOS 13.4, *) {
+            datePicker.preferredDatePickerStyle = .wheels
+        }
+
+        // Add an event to call onDidChangeDate function when value is changed.
+        datePicker.addTarget(self, action: #selector(HomeViewController.datePickerValueChanged(_:)), for: .valueChanged)
+           
+                // Add DataPicker to the view
+        viewPickerBG.backgroundColor = .white
+        viewPickerBG.addSubview(datePicker)
+        self.view.addSubview(viewPickerBG)
+        
+        
+    
+        viewPickerBG.isHidden = true
+    }
+    
+    @objc func donebuttonTapped(sender : UIButton) {
+                    //Write button action here
+        viewPickerBG.isHidden = true
+    }
+    
+
+    @objc func datePickerValueChanged(_ sender: UIDatePicker){
+            
+            // Create date formatter
+            let dateFormatter: DateFormatter = DateFormatter()
+            
+            // Set date format
+            dateFormatter.dateFormat = "YYYY-MM-DD"
+            
+            // Apply date format
+            let selectedDate: String = dateFormatter.string(from: sender.date)
+            
+            print("Selected value \(selectedDate)")
+            self.selectedDate = selectedDate
+        }
+    
+    
+    @objc func datePickerCancel(_ button: UIBarButtonItem?) {
+        viewPickerBG.isHidden = true
+    }
     
     func setConstarints(cell: UITableViewCell, imageView: UIImageView) {
         let leadingConstraint = NSLayoutConstraint(item: cell.contentView, attribute: NSLayoutConstraint.Attribute.leading, relatedBy: NSLayoutConstraint.Relation.equal, toItem: imageView, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1.0, constant: 8.0)
