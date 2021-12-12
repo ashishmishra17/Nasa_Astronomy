@@ -10,6 +10,7 @@ import Foundation
 class HomeViewModel
 {
     private var service:Servicable?
+    var successHandler: ((_ response: HomeEntity?, _ error: Error?) -> ())?
     
     init(_ service:Servicable)
     {
@@ -23,15 +24,17 @@ class HomeViewModel
         }
  
         let homeRuter = HomeRouter([:])
-        service.fetchData(request: homeRuter, HomeEntity.self) { result in
+        service.fetchData(request: homeRuter, HomeEntity.self) { [weak self] result in
             
             switch result
             {
             case .success(let homeEntiy):
                 print(homeEntiy)
+                self?.successHandler?(homeEntiy, nil)
                 break
             case .failure(let error):
                 print(error)
+                self?.successHandler?(nil, error)
                 break
             }
             

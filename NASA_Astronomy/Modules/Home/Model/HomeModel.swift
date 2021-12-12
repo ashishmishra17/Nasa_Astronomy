@@ -1,5 +1,5 @@
 //
-//  HomeEntity.swift
+//  HomeModel.swift
 //  NASA_Astronomy
 //
 //  Created by Manish on 11/12/21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HomeEntity : Decodable
+struct HomeModel : Decodable
 {
     let copyright : String?
     let date : String?

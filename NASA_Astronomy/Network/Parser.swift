@@ -12,7 +12,6 @@ struct Parser
     static func parseData<T:Decodable>(_ data:Data,_ type:T.Type) -> T?
     {
         let decoder = JSONDecoder()
-        
         do {
             let object = try decoder.decode(type.self, from: data)
             return object
