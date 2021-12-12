@@ -7,18 +7,15 @@
 
 import Foundation
 
-class HomeViewModel
-{
+class HomeViewModel {
     private var service:Servicable?
     var successHandler: ((_ response: HomeModel?, _ error: Error?) -> ())?
     
-    init(_ service:Servicable)
-    {
+    init(_ service:Servicable) {
         self.service = service
     }
     
-    func fetchNasaData()
-    {
+    func fetchNasaData() {
         //Fetch from core data
         if let data = HomeDataManager.shared.getHomeData() {
             //self.successHandler?(data, nil)
