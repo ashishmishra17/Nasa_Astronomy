@@ -64,9 +64,12 @@ class HomeViewController: UIViewController {
                     self.tableView?.reloadData()
                     self.loader?.stopAnimating()
                 }
+                
             }
             
         }
+        viewModel?.saveNasaDataInCache(homeData)
+     //   viewModel?.fetchNasaData()
     }
     
     func initViewModel() {

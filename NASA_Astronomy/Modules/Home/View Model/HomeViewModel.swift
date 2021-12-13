@@ -47,13 +47,13 @@ class HomeViewModel {
         
     }
     
-    private func saveNasaDataInCache(_ homeData: HomeModel?) {
+    func saveNasaDataInCache(_ homeData: HomeModel?) {
         guard let homeData = homeData else {return}
         let cache = NSCache<AnyObject, AnyObject>()
         cache.setObject(homeData as AnyObject, forKey: "HomeScreenData" as AnyObject)
     }
     
-    private func fetchNasaDataFromCache() {
+    func fetchNasaDataFromCache() {
         let cache = NSCache<AnyObject, AnyObject>()
         if let homeData = cache.object(forKey: "HomeScreenData" as AnyObject) {
             self.successHandler?(homeData as? HomeModel, nil)
