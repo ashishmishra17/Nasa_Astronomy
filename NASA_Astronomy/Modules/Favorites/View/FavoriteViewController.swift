@@ -35,14 +35,31 @@ class FavoriteViewController : UIViewController, UITableViewDataSource, UITableV
         let cell:UITableViewCell = (self.tableView?.dequeueReusableCell(withIdentifier: cellReuseIdentifier))!
         
         cell.textLabel?.text = "12-11-2022"
-        cell.accessoryType = .detailDisclosureButton
+        addHeartButton(cell: cell, indexPath1: indexPath)
 
         cell.selectionStyle = .none
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView,
-                            accessoryButtonTappedForRowWith indexPath: IndexPath) {
+    func addHeartButton(cell : UITableViewCell, indexPath1 : IndexPath){
+        let btnHeart = UIButton()
+        btnHeart.setImage(UIImage(named: "Empty_heart"), for: .normal)
+        btnHeart.frame = CGRect(x: self.view.frame.size.width - 44, y: 5, width: 34, height: 34)
+        btnHeart.addTarget(self, action: #selector(pressed), for: .touchUpInside)
+        btnHeart.tag = indexPath1.row
+        cell.addSubview(btnHeart)
+    }
+    
+    @objc func pressed(btnHeart : UIButton) {
+        if (btnHeart.currentImage == UIImage(named: "Empty_heart")){
+            btnHeart.setImage(UIImage(named: "Full_Heart"), for: .normal)
+            
+        }
+        else{
+            btnHeart.setImage(UIImage(named: "Empty_heart"), for: .normal)
+           
+        }
+        
     }
 }

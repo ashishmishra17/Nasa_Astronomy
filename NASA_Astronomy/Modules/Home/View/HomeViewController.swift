@@ -20,6 +20,8 @@ class HomeViewController: UIViewController {
     var loader : Loader? = nil
     var selectedDate = String()
     
+    var isPostLiked = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -204,9 +206,12 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
             } else {
                 imgView.image = UIImage(named: "logo_nasa")
             }
-            imgView.contentMode = .scaleAspectFit
+            imgView.contentMode = .scaleAspectFill
             cell.contentView.addSubview(imgView)
             setConstarints(cell: cell, imageView: imgView)
+            
+            addHeartButton(cell: cell)
+            
         }
         else if (indexPath.row == 1){
             let text = homeData?.title ?? ""
@@ -233,6 +238,24 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
         return UITableView.automaticDimension
     }
     
+    func addHeartButton(cell : UITableViewCell){
+        let btnHeart = UIButton()
+        btnHeart.setImage(UIImage(named: "Full_Heart"), for: .normal)
+        btnHeart.frame = CGRect(x: self.view.frame.size.width - 60, y: 20, width: 50, height: 50)
+        btnHeart.addTarget(self, action: #selector(pressed), for: .touchUpInside)
+        cell.addSubview(btnHeart)
+    }
     
+    @objc func pressed(btnHeart : UIButton) {
+        if (isPostLiked == true){
+            btnHeart.setImage(UIImage(named: "Full_Heart"), for: .normal)
+            isPostLiked = false
+        }
+        else{
+            btnHeart.setImage(UIImage(named: "Empty_heart"), for: .normal)
+            isPostLiked = true
+        }
+        
+    }
     
 }
