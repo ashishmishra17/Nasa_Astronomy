@@ -12,9 +12,11 @@ class FavoriteViewController : UIViewController, UITableViewDataSource, UITableV
     
     @IBOutlet var tableView : UITableView?
     let cellReuseIdentifier = "cell"
+    var viewModel:HomeViewModel?
     
     override func viewDidLoad() {
         setTableHandler()
+        viewModel?.fetchNasaDataFromCache()
     }
     
     override func viewWillAppear(_ animated: Bool) {
