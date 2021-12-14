@@ -193,7 +193,7 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         
         if (indexPath.row == 0){
-            let imgView = UIImageView(frame: CGRect(x: 0.0, y: 8.0, width: tableView.bounds.width, height: tableView.bounds.height/4))
+            let imgView = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: tableView.bounds.height/4))
             let url = URL(string: homeData?.url ?? "")
             if url != nil {
                 let data = try? Data(contentsOf: url!)
@@ -206,7 +206,7 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
             } else {
                 imgView.image = UIImage(named: "logo_nasa")
             }
-            imgView.contentMode = .scaleAspectFill
+            imgView.contentMode = .scaleAspectFit
             cell.contentView.addSubview(imgView)
             setConstarints(cell: cell, imageView: imgView)
             

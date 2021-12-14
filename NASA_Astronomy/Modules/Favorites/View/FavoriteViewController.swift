@@ -47,7 +47,7 @@ class FavoriteViewController : UIViewController, UITableViewDataSource, UITableV
     func addHeartButton(cell : UITableViewCell, indexPath1 : IndexPath){
         let btnHeart = UIButton()
         btnHeart.setImage(UIImage(named: "Empty_heart"), for: .normal)
-        btnHeart.frame = CGRect(x: self.view.frame.size.width - 44, y: 5, width: 34, height: 34)
+        btnHeart.frame = CGRect(x: self.tableView!.frame.size.width - 44, y: 5, width: 34, height: 34)
         btnHeart.addTarget(self, action: #selector(pressed), for: .touchUpInside)
         btnHeart.tag = indexPath1.row
         cell.addSubview(btnHeart)

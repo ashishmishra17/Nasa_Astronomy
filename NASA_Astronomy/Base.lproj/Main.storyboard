@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -37,11 +38,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="NASA_Astronomy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLW-3D-rlI">
-                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="pkX-ra-1Mh"/>
@@ -53,7 +54,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6aV-zQ-q8R">
-                                <rect key="frame" x="0.0" y="132" width="414" height="764"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="671"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -61,14 +62,19 @@
                         <constraints>
                             <constraint firstItem="6aV-zQ-q8R" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="HwF-HS-jDu"/>
                             <constraint firstItem="6aV-zQ-q8R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KSv-6c-9YY"/>
-                            <constraint firstAttribute="bottom" secondItem="6aV-zQ-q8R" secondAttribute="bottom" id="Pxg-c4-ZiI"/>
+                            <constraint firstAttribute="bottom" secondItem="6aV-zQ-q8R" secondAttribute="bottom" constant="93" id="Pxg-c4-ZiI"/>
                             <constraint firstItem="aLW-3D-rlI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="TnO-Yf-JIv"/>
                             <constraint firstItem="6aV-zQ-q8R" firstAttribute="top" secondItem="aLW-3D-rlI" secondAttribute="bottom" id="Zgd-kx-IAT"/>
                             <constraint firstItem="aLW-3D-rlI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="f0W-RR-6ps"/>
                             <constraint firstItem="aLW-3D-rlI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="n3f-ph-Nw7"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" selectedImage="homekit" id="iOv-Ei-uqv"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="iOv-Ei-uqv">
+                        <imageReference key="image" image="homekit" catalog="system" symbolScale="default"/>
+                        <imageReference key="selectedImage" image="homekit" catalog="system" symbolScale="default"/>
+                    </tabBarItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="6aV-zQ-q8R" id="AC1-0c-T8a"/>
                     </connections>
@@ -85,9 +91,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0KM-Kn-Ocf">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0KM-Kn-Ocf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="803"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="8rw-OQ-j4q" id="Qsy-Gf-LxE"/>
@@ -97,6 +102,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="woD-Ir-Jmp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0KM-Kn-Ocf" firstAttribute="trailing" secondItem="woD-Ir-Jmp" secondAttribute="trailing" id="5ob-De-f1n"/>
+                            <constraint firstAttribute="bottom" secondItem="0KM-Kn-Ocf" secondAttribute="bottom" constant="93" id="PMo-F4-rWb"/>
+                            <constraint firstItem="0KM-Kn-Ocf" firstAttribute="top" secondItem="EVh-dp-x4a" secondAttribute="top" id="fNN-xa-nXd"/>
+                            <constraint firstItem="0KM-Kn-Ocf" firstAttribute="leading" secondItem="woD-Ir-Jmp" secondAttribute="leading" id="rUM-Km-ONh"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favorite" image="heart.fill" catalog="system" selectedImage="heart.fill" id="Qmy-AC-2eA"/>
                     <connections>
@@ -115,7 +126,6 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JcU-s8-MtM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="R5T-9f-iNY"/>
