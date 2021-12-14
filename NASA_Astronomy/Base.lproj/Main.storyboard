@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rQA-wP-UlE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rQA-wP-UlE">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -21,9 +22,6 @@
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
-                        <navigationBarAppearance key="scrollEdgeAppearance">
-                            <color key="backgroundColor" systemColor="systemYellowColor"/>
-                        </navigationBarAppearance>
                     </navigationBar>
                     <connections>
                         <segue destination="uJf-6b-ks0" kind="relationship" relationship="rootViewController" id="rU7-oV-jZX"/>
@@ -41,20 +39,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLW-3D-rlI">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLW-3D-rlI">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="pkX-ra-1Mh"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system" title="Search"/>
+                                <state key="normal" title="Search" image="magnifyingglass" catalog="system">
+                                    <color key="titleColor" systemColor="linkColor"/>
+                                </state>
                                 <connections>
                                     <action selector="search_actionWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qHd-a2-abr"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6aV-zQ-q8R">
-                                <rect key="frame" x="0.0" y="44" width="414" height="671"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="681"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -62,7 +61,7 @@
                         <constraints>
                             <constraint firstItem="6aV-zQ-q8R" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="HwF-HS-jDu"/>
                             <constraint firstItem="6aV-zQ-q8R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KSv-6c-9YY"/>
-                            <constraint firstAttribute="bottom" secondItem="6aV-zQ-q8R" secondAttribute="bottom" constant="93" id="Pxg-c4-ZiI"/>
+                            <constraint firstAttribute="bottom" secondItem="6aV-zQ-q8R" secondAttribute="bottom" constant="83" id="Pxg-c4-ZiI"/>
                             <constraint firstItem="aLW-3D-rlI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="TnO-Yf-JIv"/>
                             <constraint firstItem="6aV-zQ-q8R" firstAttribute="top" secondItem="aLW-3D-rlI" secondAttribute="bottom" id="Zgd-kx-IAT"/>
                             <constraint firstItem="aLW-3D-rlI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="f0W-RR-6ps"/>
@@ -92,7 +91,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0KM-Kn-Ocf">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="803"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="8rw-OQ-j4q" id="Qsy-Gf-LxE"/>
@@ -104,7 +103,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="0KM-Kn-Ocf" firstAttribute="trailing" secondItem="woD-Ir-Jmp" secondAttribute="trailing" id="5ob-De-f1n"/>
-                            <constraint firstAttribute="bottom" secondItem="0KM-Kn-Ocf" secondAttribute="bottom" constant="93" id="PMo-F4-rWb"/>
+                            <constraint firstAttribute="bottom" secondItem="0KM-Kn-Ocf" secondAttribute="bottom" constant="83" id="PMo-F4-rWb"/>
                             <constraint firstItem="0KM-Kn-Ocf" firstAttribute="top" secondItem="EVh-dp-x4a" secondAttribute="top" id="fNN-xa-nXd"/>
                             <constraint firstItem="0KM-Kn-Ocf" firstAttribute="leading" secondItem="woD-Ir-Jmp" secondAttribute="leading" id="rUM-Km-ONh"/>
                         </constraints>
@@ -141,6 +140,9 @@
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
