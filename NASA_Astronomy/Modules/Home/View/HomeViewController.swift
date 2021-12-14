@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import AVKit
 
 class HomeViewController: UIViewController {
     
@@ -179,6 +180,21 @@ class HomeViewController: UIViewController {
         cell.contentView.addConstraint(topConstraint)
         cell.contentView.addConstraint(bottomConstraint)
     }
+    
+    func setConstarints(cell: UITableViewCell, moviePlayer: AVPlayerViewController) {
+        let leadingConstraint = NSLayoutConstraint(item: cell.contentView, attribute: NSLayoutConstraint.Attribute.leading, relatedBy: NSLayoutConstraint.Relation.equal, toItem: moviePlayer, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1.0, constant: 8.0)
+        let trailingConstraint = NSLayoutConstraint(item: cell.contentView, attribute: NSLayoutConstraint.Attribute.trailing, relatedBy: NSLayoutConstraint.Relation.equal, toItem: moviePlayer, attribute: NSLayoutConstraint.Attribute.trailing, multiplier: 1.0, constant: 8.0)
+        
+        cell.contentView.addConstraint(leadingConstraint)
+        cell.contentView.addConstraint(trailingConstraint)
+        
+        let topConstraint = NSLayoutConstraint(item: cell.contentView, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: moviePlayer, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1.0, constant: 15.0)
+        
+        let bottomConstraint = NSLayoutConstraint(item: cell.contentView, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: moviePlayer, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1.0, constant: 8.0)
+        
+        cell.contentView.addConstraint(topConstraint)
+        cell.contentView.addConstraint(bottomConstraint)
+    }
 }
 
 extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
@@ -193,6 +209,7 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         
         if (indexPath.row == 0){
+          if (homeData?.media_type == "image"){
             let imgView = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: tableView.bounds.height/4))
             let url = URL(string: homeData?.url ?? "")
             if url != nil {
@@ -209,7 +226,17 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
             imgView.contentMode = .scaleAspectFit
             cell.contentView.addSubview(imgView)
             setConstarints(cell: cell, imageView: imgView)
-            
+          }
+          else{
+            let videoURL = URL(string: homeData?.url ?? "")
+            let player = AVPlayer(url: videoURL!)
+            let playerViewController = AVPlayerViewController()
+            playerViewController.player = player
+            self.present(playerViewController, animated: true) {
+                playerViewController.player!.play()
+            }
+            setConstarints(cell: cell, moviePlayer: playerViewController)
+          }
             addHeartButton(cell: cell)
             
         }
@@ -238,6 +265,7 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
         return UITableView.automaticDimension
     }
     
+    //MARK: Favorite Button
     func addHeartButton(cell : UITableViewCell){
         let btnHeart = UIButton()
         btnHeart.setImage(UIImage(named: "Full_Heart"), for: .normal)
