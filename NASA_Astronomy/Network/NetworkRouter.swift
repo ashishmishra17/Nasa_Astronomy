@@ -12,9 +12,9 @@ struct HomeRouter : URLRequestConvertible
 {
     private var parameters: Parameters?
     
-    init(_ parameters:[String:Any])
-    {
+    init(_ parameters:[String:Any]) {
         self.parameters = parameters
+
     }
     
     // MARK: - HTTPMethod

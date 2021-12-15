@@ -33,7 +33,7 @@ class HomeViewModel {
             switch result
             {
             case .success(let homeEntiy):
-                print(homeEntiy)
+             //   print(homeEntiy)
                 self?.successHandler?(homeEntiy, nil)
                 break
             case .failure(let error):
@@ -42,7 +42,7 @@ class HomeViewModel {
                 break
             }
             
-            print(homeRuter)
+        //    print(homeRuter)
         }
         
     }

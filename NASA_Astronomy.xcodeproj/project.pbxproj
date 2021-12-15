@@ -27,6 +27,7 @@
 		13CB78E827660667009E8ACD /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CB78E727660667009E8ACD /* HomeDataManager.swift */; };
 		13CB78EA276606B7009E8ACD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CB78E9276606B7009E8ACD /* CoreDataManager.swift */; };
 		13CB78EE2766519D009E8ACD /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CB78ED2766519D009E8ACD /* Loader.swift */; };
+		1834FE9727690BD50087027E /* Global_Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1834FE9627690BD50087027E /* Global_Class.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		13CB78E727660667009E8ACD /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
 		13CB78E9276606B7009E8ACD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		13CB78ED2766519D009E8ACD /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		1834FE9627690BD50087027E /* Global_Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global_Class.swift; sourceTree = "<group>"; };
 		21528F605CCC3A3836CB586F /* Pods_NASA_Astronomy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NASA_Astronomy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF385E10059DA3A8A96E7A3 /* Pods-NASA_Astronomy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NASA_Astronomy.release.xcconfig"; path = "Target Support Files/Pods-NASA_Astronomy/Pods-NASA_Astronomy.release.xcconfig"; sourceTree = "<group>"; };
 		446BBC99AFD8DA8F32FFF9DB /* Pods-NASA_Astronomy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NASA_Astronomy.debug.xcconfig"; path = "Target Support Files/Pods-NASA_Astronomy/Pods-NASA_Astronomy.debug.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				13C11B8D2764D84800CC8708 /* Assets.xcassets */,
 				13C11B8F2764D84800CC8708 /* LaunchScreen.storyboard */,
 				13C11B922764D84800CC8708 /* Info.plist */,
+				1834FE9627690BD50087027E /* Global_Class.swift */,
 			);
 			path = NASA_Astronomy;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				13CB78DF2765FD41009E8ACD /* ErrorEnums.swift in Sources */,
 				13CB78E827660667009E8ACD /* HomeDataManager.swift in Sources */,
 				13CB78E6276605B1009E8ACD /* HomeEntity.swift in Sources */,
+				1834FE9727690BD50087027E /* Global_Class.swift in Sources */,
 				13CB78D127650B5B009E8ACD /* FavoriteViewModel.swift in Sources */,
 				13CB78EE2766519D009E8ACD /* Loader.swift in Sources */,
 				13C11B852764D84500CC8708 /* AppDelegate.swift in Sources */,

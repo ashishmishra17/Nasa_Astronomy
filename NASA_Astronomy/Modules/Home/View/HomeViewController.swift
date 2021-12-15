@@ -25,12 +25,16 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setLoader()
-        initViewModel()
-        fetchData()
-        setTableHandler()
-        setDatePickerUI()
+        if (Connectivity.isConnectedToInternet()){
+           setLoader()
+           initViewModel()
+           fetchData()
+           setTableHandler()
+           setDatePickerUI()
+        }
+        else{
+            viewModel?.fetchNasaDataFromCache()
+        }
     }
     
         
@@ -59,7 +63,7 @@ class HomeViewController: UIViewController {
             }
             
             if let data = response {
-                print(data.title ?? "")
+              //  print(data.title ?? "")
                 self.homeData = data
                 DispatchQueue.main.async {
                     self.tableView?.delegate = self
@@ -143,6 +147,7 @@ class HomeViewController: UIViewController {
     @objc func donebuttonTapped(sender : UIButton) {
                     //Write button action here
         viewPickerBG.isHidden = true
+        
     }
     
 
@@ -157,7 +162,7 @@ class HomeViewController: UIViewController {
             // Apply date format
             let selectedDate: String = dateFormatter.string(from: sender.date)
             
-            print("Selected value \(selectedDate)")
+        //    print("Selected value \(selectedDate)")
             self.selectedDate = selectedDate
         }
     

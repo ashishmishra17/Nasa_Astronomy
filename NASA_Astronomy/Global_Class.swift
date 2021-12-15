@@ -6,3 +6,5 @@
 //
 
 import Foundation
+var globalArray = Array<Any>()
+var globalResponse = [String: Any].self
